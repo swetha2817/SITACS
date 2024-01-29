@@ -1,0 +1,27 @@
+
+{% extends 'adminlayout.html' %}
+{% block body %}
+  <h3 class='jumbotron'>Welcome Admin</h3>
+  
+  <table class='table table-bordered'>
+    <thead>
+      <th>SNo</th>
+      <th>User Name</th>
+      <th>File Name</th>
+      <th>File Access Deails</th>
+    </thead>
+    <tbody>
+      {% for row in datas %}
+        <tr>
+          <td>{{loop.index}}</td>
+          <td>{{row.username}}</td>
+          <td>{{row.filename}}</td>
+          <td><a href="/{{row.fileaccesskey}}/adminfileaccesspersuc" class='btn btn-success'>Send</a>
+            <a href="/{{row.fileaccesskey}}/adminfileaccessperdeny" class='btn btn-success'>Cancel</a>
+        </td>
+        </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+
+{% endblock %}s

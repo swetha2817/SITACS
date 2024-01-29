@@ -1,0 +1,33 @@
+
+{% extends 'adminlayout.html' %}
+{% block body %}
+  <h3 class='jumbotron'>Welcome Admin</h3>
+  
+  <table class='table table-bordered'>
+    <thead>
+      <th>SNo</th>
+      <th>Cloud Name</th>
+      <th>Cloud Owner Name</th>
+      <th>Access Key</th>
+      <th>Port No</th>
+      <th>Email</th>
+      <th>Mobile</th>
+      <th>Verify</th>
+    </thead>
+    <tbody>
+      {% for row in datas %}
+        <tr>
+          <td>{{loop.index}}</td>
+          <td>{{row.cloudname}}</td>
+          <td>{{row.cloudownername}}</td>
+          <td>{{row.accesskey}}</td>
+          <td>{{row.port}}</td>
+          <td>{{row.phone}}</td>
+          <td>{{row.email}}</td>
+          <td><a href="/{{row.uname}}/adminuserverify" class='btn btn-success'>Verify</a></td>
+        </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+
+{% endblock %}s

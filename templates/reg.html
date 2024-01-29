@@ -1,0 +1,56 @@
+
+{% extends 'layout.html' %}
+{% block body %}
+  <div class='row mt-5'>
+    <div class='col-4 mx-auto'>
+      <h4 class='text-center'>User Registration</h4><hr>
+      <form action="{{url_for('reg')}}" method='post'>
+        <div class='form-group'>
+          <label>Cloud Name</label>
+          <select  name='cname' class='form-control'>
+            <option>Globus</option>
+          </select>
+        </div>
+        <div class='form-group'>
+          <label>Cloud Owner Name</label>
+          <input type='text' name='coname' required class='form-control'>  
+        </div>
+        <div class='form-group'>
+          <label>Access Key</label>
+          <input type='text' name='acckesskey' required class='form-control'>  
+        </div>
+        <div class='form-group'>
+          <label>Port No</label>
+          <input type='text' name='port' required class='form-control'>  
+        </div>
+        <div class='form-group'>
+          <label>Organization</label>
+          <select  name='cname' class='form-control'>
+            <option>Agriculture</option>
+            <option>Railway</option>
+            <option>Industries</option>
+            <option>IT</option>
+            <option>Cloud Service Provider</option>
+          </select>  
+        </div>
+        <div class='form-group'>
+            <label>Mobile No</label>
+            <input type='text' name='mobile' required class='form-control'>  
+          </div>
+          <div class='form-group'>
+            <label>Email Id</label>
+            <input type='email' name='email' required class='form-control'>  
+          </div>
+          <div class='form-group'>
+            <label>User Name</label>
+            <input type='text' name='uname' required class='form-control'>  
+          </div>
+        <div class='form-group'>
+          <label>Password</label>
+          <input type='password' name='upass' required class='form-control'>  
+        </div>
+        <input type='submit' name='submit' value='Submit' class='btn btn-success'>
+      </form>
+    </div>
+  </div>
+{% endblock %}

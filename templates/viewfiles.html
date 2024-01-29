@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block body %}
+<h3 class='jumbotron'>View Files</h3>
+<table class='table table-bordered'>
+    <thead>
+      <th>S. No</th>
+      <th>File Name</th>
+      <th>File Description</th>
+      <th>Date / Time</th>
+      <th>Request</th>
+    </thead>
+    <tbody>
+      {% for row in datas %}
+        <tr>
+          <td>{{loop.index}}</td>
+          <td>{{row.filename}}</td>
+          <td>{{row.filedec}}</td>
+          <td>{{row.datetime}}</td>
+          <td><a href="/{{row.fileaccesskey}}/userdownloadrequest" class='btn btn-success'>Download Request</a></td>
+        </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+
+{% endblock %}

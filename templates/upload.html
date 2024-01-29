@@ -1,0 +1,21 @@
+
+{% extends 'layout.html' %}
+{% block body %}
+<h3 class='jumbotron'>Upload Files</h3>
+<div class='row mt-5'>
+    <div class='col-4 mx-auto'>
+      <h4 class='text-center'></h4><hr>
+      <form action="{{url_for('upload')}}" method='POST' enctype="multipart/form-data">
+        <div class='form-group'>
+          <label>File Name</label>
+          <input type='file' name="uploadfile" class='form-control'>  
+        </div>
+        <div class='form-group'>
+          <label>File Description</label>
+          <input type='text' name='filedec' required class='form-control'>  
+        </div>
+        <input type='submit' name='submit' value='Upload' class='btn btn-success'>
+      </form>
+    </div>
+  </div>
+{% endblock %}
